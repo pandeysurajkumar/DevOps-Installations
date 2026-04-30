@@ -1,14 +1,20 @@
 1. create a user in IAM with admin full access, and create a access key & secret access key
 2. Create a role for ec2 instance with admin full access
 3. launch ec2 instance and configure aws-cli
-4. aws ecr get-login (this is show output like this docker login -u AWS -p “encryted-password”  -e “ecr pvt-ur”)
-5. use the same command to login to ecr docker (output will be login succeded)
-6. docker secret key will be created in /root/.docker/config.jason
-7. Now create a registry key by using this command 
+   ```bahs
+   aws ecr get-login (this is show output like this docker login -u AWS -p “encryted-password”  -e “ecr pvt-ur”)
+   ``
+6. use the same command to login to ecr docker (output will be login succeded)
+7. docker secret key will be created in /root/.docker/config.jason
+8. Now create a registry key by using this command 
+    ```bash
     kubectl create secret generic my-registry-key --from-file=.dockerconfigjson=.docker/config.json --type=kubernetes.io/dockerconfigjson
-8. To check the secret key use this command 
+    ```
+9. To check the secret key use this command 
+     ```bash
      kubectl get secret or kubectl get secret -o yaml
-9. create a deployment file 
+     ```
+10. create a deployment file 
 ```bash
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
