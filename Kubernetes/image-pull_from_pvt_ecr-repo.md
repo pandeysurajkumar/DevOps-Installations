@@ -3,7 +3,7 @@
 3. launch ec2 instance and configure aws-cli
    ```bash
    aws ecr get-login (this is show output like this docker login -u AWS -p “encryted-password”  -e “ecr pvt-ur”)
-   ``
+   ```
 6. use the same command to login to ecr docker (output will be login succeded)
 7. docker secret key will be created in /root/.docker/config.jason
 8. Now create a registry key by using this command 
