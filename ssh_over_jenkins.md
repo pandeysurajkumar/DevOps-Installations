@@ -21,8 +21,7 @@ pipeline {
     }
 }
 ```
-
-###Steps###
+**Steps**
 1. Go to manage jenkin, 
 2. install a plugin named "publish over ssh"
 3. Go to system setting, and add ssh server name, host, and username and pemfile
