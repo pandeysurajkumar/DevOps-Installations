@@ -22,38 +22,44 @@ spec:
         ports:
         - containerPort: 80
 ```
+```bash
 kubectl create service nodeport nginx --tcp=80:80
+```
 https://kubernetes.io/docs/tasks/configure-pod-container/
+```bash
 kubectl create service nodeport nginx --tcp=80:80
+```
+```bash
 kubectl get svc
+```
 --------------------------------------------------------------------------------
-Replicationsets:
+**Replicationsets**
+```bash
 Kubectl create -f replicaset-definition.yml
 kubectl get replicaset
 kubectl delete replicaset myapp-replicaset
 kubectl replace -f replicaset-definition.yml
 kubectl scale --replicas=6 -f replicaset-definition.yml
-
-
-Deployment:
+```
+**Deployment**
 Rollout - new deployment with revision1, if update the image then its Revision2 
+```bash
 kubectl rollout status deployment/myapp-deployment
+```
 
-
-DS - 
-Recreate - Destroy all and create new instances (Application will go down)
-Rolling Update - one after one
-
-kubectl apply -f deployment-definition.yml 
-
-Rollback: 
+**Rollback**
+```bash
 kubectl rollout undo deployment/myapp-deployment
+```
 https://kubernetes.io/docs/tasks/configure-pod-container/assign-pods-nodes/    (to specify nodes )
-
+```bash
 kubectl run nginx --image=nginx --port=80 deployment "nginx" created
 sudo swapoff -a
 sudo sed -i '/ swap / s/^/#/' /etc/fstab
+```
+
 # Reboot a machine after that.
+```bash
 kubeadm reset
 kubeadm init --ignore-preflight-errors all
-docker pull satwik34/my-repo:nginx-myimage2
+```
