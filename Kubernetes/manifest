@@ -1,5 +1,6 @@
-Here's an example .yaml file that shows the required fields and object spec for a Kubernetes Deployment:
+Here's an example .yaml file that shows the required fields and object spec for a Kubernetes Deployment
 application/deployment.yaml 
+```
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
@@ -19,7 +20,7 @@ spec:
         image: nginx:1.14.2
         ports:
         - containerPort: 80
-
+```
 kubectl create service nodeport nginx --tcp=80:80
 https://kubernetes.io/docs/tasks/configure-pod-container/
 kubectl create service nodeport nginx --tcp=80:80
