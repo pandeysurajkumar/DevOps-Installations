@@ -1,7 +1,7 @@
 1. create a user in IAM with admin full access, and create a access key & secret access key
 2. Create a role for ec2 instance with admin full access
 3. launch ec2 instance and configure aws-cli
-   ```bahs
+   ```bash
    aws ecr get-login (this is show output like this docker login -u AWS -p “encryted-password”  -e “ecr pvt-ur”)
    ``
 6. use the same command to login to ecr docker (output will be login succeded)
